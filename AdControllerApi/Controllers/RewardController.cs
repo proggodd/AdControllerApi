@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AdControllerApi.Dtos;
+using Microsoft.AspNetCore.Mvc;
 using MyAdsApi.Models;
 
 namespace MyAdsApi.Controllers
@@ -29,7 +30,7 @@ namespace MyAdsApi.Controllers
         }
 
         [HttpPost("users/{userId}/rewards/claim")]
-        public IActionResult ClaimReward(int userId, [FromBody] RewardClaimRequest request)
+        public IActionResult ClaimReward(int userId, [FromBody] RewardClaimRequestDto request)
         {
             _userService.ClaimReward(userId, request);
             return Ok();

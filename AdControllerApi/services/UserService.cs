@@ -1,6 +1,6 @@
-﻿using MyAdsApi.Models;
-using System;
-using System.Collections.Generic;
+﻿using AdControllerApi.Dtos;
+using MyAdsApi.Controllers;
+using MyAdsApi.Models;
 
 public class UserService : IUserService
 {
@@ -29,7 +29,7 @@ public class UserService : IUserService
         throw new NotImplementedException();
     }
 
-    internal void ClaimReward(int userId, RewardClaimRequest request)
+    internal void ClaimReward(int userId, RewardClaimRequestDto request)
     {
         throw new NotImplementedException();
     }

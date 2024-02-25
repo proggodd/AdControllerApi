@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AdControllerApi.Dtos;
+using Microsoft.AspNetCore.Mvc;
 using MyAdsApi.Models;
 using MyAdsApi.Services;
 
@@ -37,7 +38,7 @@ namespace MyAdsApi.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] UserLoginModel loginModel)
+        public IActionResult Login([FromBody] UserLoginDto loginModel)
         {
             // Authenticate the user
             User authenticatedUser = _userService.AuthenticateUser(loginModel.Email, loginModel.Password);

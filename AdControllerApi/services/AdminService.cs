@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AdControllerApi.Dtos;
 using MyAdsApi.Data;
 using MyAdsApi.Models;
 
@@ -65,7 +66,7 @@ namespace MyAdsApi.Services
             throw new NotImplementedException();
         }
 
-        internal void UpdateAdSettings(AdSettingsUpdateRequest request)
+        internal void UpdateAdSettings(AdSettingUpdateRequestDto request)
         {
             throw new NotImplementedException();
         }

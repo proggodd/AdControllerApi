@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyAdsApi.Services;
-
+using AdControllerApi.Dtos;
 namespace MyAdsApi.Controllers
 {
     [Route("api/[controller]")]
@@ -22,7 +22,7 @@ namespace MyAdsApi.Controllers
         }
 
         [HttpPost("updateAdSettings")]
-        public IActionResult UpdateAdSettings([FromBody] AdSettingsUpdateRequest request)
+        public IActionResult UpdateAdSettings([FromBody] AdSettingUpdateRequestDto request)
         {
             _adminService.UpdateAdSettings(request);
             return Ok();
