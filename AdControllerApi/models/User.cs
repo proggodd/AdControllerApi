@@ -7,7 +7,7 @@
         public string? Email { get; set; }
         public string? Password { get; set; }
         public int Coins { get; set; }
-        public String PasswordHash { get; internal set; }
+        public string? PasswordHash { get; internal set; }
         // Additional properties such as FirstName, LastName, etc., can be added as needed
     }
 }
