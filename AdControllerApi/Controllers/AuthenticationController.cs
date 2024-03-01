@@ -11,11 +11,13 @@ namespace MyAdsApi.Controllers
     {
         private readonly UserService _userService;
         private readonly JwtAuthenticationService _jwtAuthenticationService;
+        private readonly PasswordHashingService _passwordHashingService;
 
-        public AuthenticationController(UserService userService, JwtAuthenticationService jwtAuthenticationService)
+        public AuthenticationController(UserService userService, JwtAuthenticationService jwtAuthenticationService, PasswordHashingService passwordHashingService)
         {
             _userService = userService;
             _jwtAuthenticationService = jwtAuthenticationService;
+            _passwordHashingService = passwordHashingService;
         }
 
         [HttpPost("register")]
@@ -27,8 +29,8 @@ namespace MyAdsApi.Controllers
                 return Conflict("User with the provided email already exists.");
             }
 
-            // Hash the user's password (You should never store passwords as plain text!)
-            user.PasswordHash = PasswordHashingService.HashPassword(user.Password);
+            // Hash the user's password 
+            user.PasswordHash = _passwordHashingService.HashPassword(user.Password);
 
             // Save the user to the database
             _userService.CreateUser(user);
